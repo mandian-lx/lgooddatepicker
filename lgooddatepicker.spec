@@ -14,8 +14,8 @@ BuildArch:	noarch
 
 BuildRequires:	maven-local
 BuildRequires:	maven-antrun-plugin
-BuildRequires:	maven-gpg-plugin
-BuildRequires:	maven-shade-plugin
+#BuildRequires:	maven-gpg-plugin
+#BuildRequires:	maven-shade-plugin
 BuildRequires:	beansbinding
 
 Requires:	java-headless >= 1.8
@@ -48,7 +48,11 @@ API documentation for %{name}.
 find . -name "*.jar" -delete
 find . -name "*.class" -delete
 
-# Remove failing depsnednry (used only for demo)
+# Remove failin plugins
+%pom_remove_plugin :maven-gpg-plugin
+%pom_remove_plugin :maven-shade-plugin
+
+# Remove failing dependency (used only for demo)
 %pom_remove_dep :beansbinding ./Project
 
 %build
