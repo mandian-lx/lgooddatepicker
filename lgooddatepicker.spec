@@ -49,8 +49,8 @@ find . -name "*.jar" -delete
 find . -name "*.class" -delete
 
 # Remove failin plugins
-%pom_remove_plugin :maven-gpg-plugin
-%pom_remove_plugin :maven-shade-plugin
+%pom_remove_plugin :maven-gpg-plugin  ./Project
+%pom_remove_plugin :maven-shade-plugin  ./Project
 
 # Remove failing dependency (used only for demo)
 %pom_remove_dep :beansbinding ./Project
