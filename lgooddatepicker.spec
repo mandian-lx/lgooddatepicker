@@ -4,7 +4,7 @@
 Summary:	Java Swing Date Picker
 Name:		%{lname}
 Version:	8.3.0
-Release:	0
+Release:	1
 License:	MIT
 Group:		Development/Java
 URL:		https://github.com/%{oname}/%{oname}
@@ -13,6 +13,7 @@ Source0:	https://github.com/%{oname}/%{oname}/archive/v%{version}-Standard/%{nam
 BuildArch:	noarch
 
 BuildRequires:	maven-local
+BuildRequires:	maven-shade-plugin
 BuildRequires:	beansbinding
 
 Requires:	java-headless >= 1.8
@@ -45,7 +46,7 @@ API documentation for %{name}.
 find . -name "*.jar" -delete
 find . -name "*.class" -delete
 
-# Remove failing depsnednry (use only for demo)
+# Remove failing depsnednry (used only for demo)
 %pom_remove_dep :beansbinding ./Project
 
 %build
