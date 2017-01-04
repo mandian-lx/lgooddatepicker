@@ -59,5 +59,5 @@ find . -name "*.class" -delete
 %mvn_build -d -- -f ./Project
 
 %install
-%mvn install -- -f ./Project
+%mvn_install -- -f ./Project
 
