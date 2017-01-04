@@ -13,9 +13,6 @@ Source0:	https://github.com/%{oname}/%{oname}/archive/v%{version}-Standard/%{nam
 BuildArch:	noarch
 
 BuildRequires:	maven-local
-BuildRequires:	maven-antrun-plugin
-#BuildRequires:	maven-gpg-plugin
-#BuildRequires:	maven-shade-plugin
 BuildRequires:	beansbinding
 
 Requires:	java-headless >= 1.8
@@ -49,14 +46,15 @@ find . -name "*.jar" -delete
 find . -name "*.class" -delete
 
 # Remove failin plugins
-%pom_remove_plugin :maven-gpg-plugin  ./Project
-%pom_remove_plugin :maven-shade-plugin  ./Project
+%pom_remove_plugin :maven-gpg-plugin ./Project
+%pom_remove_plugin :maven-shade-plugin ./Project
+%pom_remove_plugin :maven-antrun-plugin ./Project
 
 # Remove failing dependency (used only for demo)
 %pom_remove_dep :beansbinding ./Project
 
 %build
-%mvn_build -d -- -f ./Project
+%mvn_build -- -f ./Project
 
 %install
 %mvn_install -- -f ./Project
