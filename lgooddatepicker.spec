@@ -13,6 +13,8 @@ Source0:	https://github.com/%{oname}/%{oname}/archive/v%{version}-Standard/%{nam
 BuildArch:	noarch
 
 BuildRequires:	maven-local
+BuildRequires:	maven-antrun-plugin
+BuildRequires:	maven-gpg-plugin
 BuildRequires:	maven-shade-plugin
 BuildRequires:	beansbinding
 
