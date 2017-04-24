@@ -11,7 +11,6 @@ License:	MIT
 Group:		Development/Java
 URL:		https://github.com/%{oname}/%{oname}
 Source0:	https://github.com/%{oname}/%{oname}/archive/v%{version}-Standard/%{name}-%{version}.tar.gz
-#https://github.com/LGoodDatePicker/LGoodDatePicker/archive/v8.3.0-Standard.tar.gz
 BuildArch:	noarch
 
 BuildRequires:	maven-local
