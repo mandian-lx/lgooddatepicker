@@ -1,3 +1,5 @@
+%{?_javapackages_macros:%_javapackages_macros}
+
 %define oname LGoodDatePicker
 %define lname %(echo %oname | tr [:upper:] [:lower:])
 
